@@ -1,9 +1,11 @@
 # Central ConCrédito - Ilhas de Treinamento
 
-Versão com as 3 ilhas ativas incorporadas diretamente pelo Miro:
+Versão com 4 ilhas integradas via Miro Embed:
 
-- Ilha Sem Autorização
-- Ilha FGTS
-- Ilha Pendentes
+- Sem Autorização
+- FGTS
+- Pendentes
+- Suporte
 
-Os PDFs e arquivos originais permanecem na pasta assets para consulta/download.
+A logo da ConCrédito retorna para a tela inicial.
+As descrições dos cards foram simplificadas.
