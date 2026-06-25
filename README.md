@@ -1,11 +1,5 @@
-# Central ConCrédito - Ilhas de Treinamento
+Central ConCrédito - 5 ilhas no Miro com PDFs integrados.
 
-Versão com 4 ilhas integradas via Miro Embed:
+Ilhas: Sem Autorização, FGTS, Pendentes, Suporte e Atendimento Base CLT.
 
-- Sem Autorização
-- FGTS
-- Pendentes
-- Suporte
-
-A logo da ConCrédito retorna para a tela inicial.
-As descrições dos cards foram simplificadas.
+Atualização: PDFs da ilha Suporte e Atendimento Base CLT adicionados aos botões PDF correspondentes.
