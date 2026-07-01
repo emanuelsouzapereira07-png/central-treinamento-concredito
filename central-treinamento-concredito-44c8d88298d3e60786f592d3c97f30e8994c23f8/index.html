@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ilhas de Treinamento | ConCrédito</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <aside class="sidebar">
+    <button class="brand brand-home" id="brandHome" type="button" title="Voltar para a tela inicial"><div class="brand-icon">C</div><div><strong>ConCrédito</strong><span>CONSIGNADOS</span></div></button>
+    <div class="menu-label">MENU</div>
+    <nav class="nav">
+      <button class="nav-item active" data-island="sem"><span class="nav-ico">1</span><span>Sem Autorização</span></button>
+      <button class="nav-item" data-island="fgts"><span class="nav-ico">2</span><span>FGTS</span></button>
+      <button class="nav-item" data-island="pendentes"><span class="nav-ico">3</span><span>Pendentes</span></button>
+      <button class="nav-item" data-island="suporte"><span class="nav-ico">4</span><span>Suporte</span></button>
+      <button class="nav-item" data-island="cltpiloto"><span class="nav-ico">5</span><span>CLT Piloto</span></button>
+      <button class="nav-item" data-island="interesse"><span class="nav-ico">6</span><span>Clientes com Interesse</span></button>
+      <button class="nav-item" data-island="baseclt"><span class="nav-ico">CLT</span><span>Atendimento Base CLT</span></button>
+    </nav>
+    <div class="profile"><div class="avatar">E</div><div><span>PERFIL</span><strong>Suporte</strong></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><span class="pill">Mapa de Treinamento</span><h1>Ilhas de Atendimento</h1><p>Escolha uma ilha para estudar o fluxo de atendimento.</p></div><button class="top-action" id="toggleSearch">Ocultar Pesquisa</button></header>
+    <section class="quick-search" id="quickSearch"><label>Pesquisa rápida<input type="text" id="searchInput" placeholder="Ex: autorização, FGTS, pendente, proposta, assinatura, pagamento..."></label><button id="filterBtn">Filtrar</button></section>
+
+    <section class="dashboard" id="dashboard">
+      <article class="card active-card"><div class="card-header"><div><span class="status">Ativa</span><h2>Ilha 1 — Sem Autorização</h2><p>Fluxograma destinado aos atendimentos em que o cliente permanece em loop na etapa de autorização, mesmo após informar três ou mais vezes que já autorizou. O fluxo orienta o suporte na continuidade do atendimento humano para concluir a operação.</p></div><button class="primary open-island" data-open="sem">Abrir ilha</button></div></article>
+      <article class="card active-card small-card"><div class="card-header"><div><span class="status">Ativa</span><h2>Ilha 2 — FGTS</h2><p>Fluxograma utilizado para os atendimentos originados dos disparos diários da campanha de FGTS. Contém o processo completo para atendimento, simulação, acompanhamento e direcionamento dos clientes interessados.</p></div><button class="primary open-island" data-open="fgts">Abrir ilha</button></div></article>
+      <article class="card active-card small-card"><div class="card-header"><div><span class="status">Ativa</span><h2>Ilha 3 — Pendentes</h2><p>Fluxograma destinado aos clientes que possuem propostas pendentes ou que encontraram algum erro durante o cadastro da operação. Orienta o suporte nas verificações necessárias para dar continuidade ao atendimento e concluir a proposta.</p></div><button class="primary open-island" data-open="pendentes">Abrir ilha</button></div></article>
+      <article class="card active-card small-card"><div class="card-header"><div><span class="status">Ativa</span><h2>Ilha 4 — Suporte</h2><p>Fluxograma com os principais procedimentos realizados pela equipe de Suporte, reunindo os fluxos operacionais, tratativas internas e processos de atendimento para resolução das demandas dos clientes.</p></div><button class="primary open-island" data-open="suporte">Abrir ilha</button></div></article>
+      <article class="card active-card small-card"><div class="card-header"><div><span class="status">Ativa</span><h2>Ilha 5 — CLT Piloto</h2><p>Fluxograma utilizado para atendimentos relacionados a falhas na consulta de saldo, indisponibilidade da API ou erros na obtenção dos dados do cliente, tanto para Crédito do Trabalhador quanto para FGTS.</p></div><button class="primary open-island" data-open="cltpiloto">Abrir ilha</button></div></article>
+      <article class="card active-card small-card"><div class="card-header"><div><span class="status">Ativa</span><h2>Ilha 6 — Clientes com Interesse</h2><p>Fluxograma para atendimentos de clientes que demonstraram interesse em contratar.</p></div><button class="primary open-island" data-open="interesse">Abrir ilha</button></div></article>
+      <article class="card active-card small-card"><div class="card-header"><div><span class="status">Material</span><h2>Atendimento Base CLT</h2><p>Fluxograma que reúne o fluxo padrão de atendimento do Crédito do Trabalhador (CLT), servindo como referência para conduzir o cliente desde a consulta inicial até a conclusão da proposta.</p></div><button class="primary open-island" data-open="baseclt">Abrir atendimento</button></div></article>
+    </section>
+
+    <section class="island-view" id="islandView">
+      <div class="view-header"><div><span class="pill" id="viewerPill">Ilha ativa</span><h2 id="islandTitle">Sem Autorização</h2><p id="islandDesc">Visualize o fluxograma oficial incorporado diretamente do Miro.</p></div><div class="view-actions"><button class="secondary" id="fullBtn">Tela cheia</button><a class="secondary link-btn" id="pdfLink" href="assets/ilha-sem-autorizacao.pdf" target="_blank">PDF</a><button class="primary" id="backMap">Voltar ao mapa</button></div></div>
+      <div class="flow-wrapper" id="flowWrapper"><img id="flowImage" src="assets/ilha-sem-autorizacao-visivel.png" width="4407" height="4593" alt="Fluxograma"><iframe id="miroFrame" class="miro-frame" src="" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe></div>
+    </section>
+  </main>
+  <div class="toast" id="toast">Esta ilha será adicionada em breve.</div>
+  <script>
+    window.ILHAS = {
+      sem: {title:"Sem Autorização", desc:"Fluxograma destinado aos atendimentos em que o cliente permanece em loop na etapa de autorização, mesmo após informar três ou mais vezes que já autorizou. O fluxo orienta o suporte na continuidade do atendimento humano para concluir a operação.", image:"assets/ilha-sem-autorizacao-visivel.png", pdf:"assets/ilha-sem-autorizacao.pdf", width:4407, height:4593, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_ta2bE=/?focusWidget=3458764677096792741&embedMode=view_only_without_ui&embedId=641622250871", miroOpen:"https://miro.com/app/board/uXjVHBOqzXs=/"},
+      fgts: {title:"FGTS", desc:"Fluxograma utilizado para os atendimentos originados dos disparos diários da campanha de FGTS. Contém o processo completo para atendimento, simulação, acompanhamento e direcionamento dos clientes interessados.", image:"assets/ilha-fgts-visivel.png", pdf:"assets/ilha-fgts.pdf", width:4290, height:4719, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_srl-Q=/?focusWidget=3458764677097012184&embedMode=view_only_without_ui&embedId=15636604930", miroOpen:"https://miro.com/app/board/uXjVHBOqzXs=/"},
+      pendentes: {title:"Pendentes", desc:"Fluxograma destinado aos clientes que possuem propostas pendentes ou que encontraram algum erro durante o cadastro da operação. Orienta o suporte nas verificações necessárias para dar continuidade ao atendimento e concluir a proposta.", image:"assets/ilha-pendentes-visivel.png", pdf:"assets/ilha-pendentes.pdf", width:2571, height:3495, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_tIO-o=/?focusWidget=3458764677097059466&embedMode=view_only_without_ui&embedId=520077407304", miroOpen:"https://miro.com/app/board/uXjVHBOqzXs=/"},
+      suporte: {title:"Suporte", desc:"Fluxograma com os principais procedimentos realizados pela equipe de Suporte, reunindo os fluxos operacionais, tratativas internas e processos de atendimento para resolução das demandas dos clientes.", image:"", pdf:"assets/ilha-suporte.pdf", width:0, height:0, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_sjA70=/?focusWidget=3458764677097230263&embedMode=view_only_without_ui&embedId=97264695988", miroOpen:"https://miro.com/app/board/uXjVHBOqzXs=/"},
+      baseclt: {title:"Atendimento Base CLT", desc:"Fluxograma que reúne o fluxo padrão de atendimento do Crédito do Trabalhador (CLT), servindo como referência para conduzir o cliente desde a consulta inicial até a conclusão da proposta.", image:"", pdf:"assets/ilha-atendimento-base-clt.pdf", width:0, height:0, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_sIQA0=/?focusWidget=3458764677097473933&embedMode=view_only_without_ui&embedId=306271998616", miroOpen:"https://miro.com/app/board/uXjVHBOqzXs=/"},
+      cltpiloto: {title:"CLT Piloto", desc:"Fluxograma utilizado para atendimentos relacionados a falhas na consulta de saldo, indisponibilidade da API ou erros na obtenção dos dados do cliente, tanto para Crédito do Trabalhador quanto para FGTS.", image:"", pdf:"assets/ilha-clt-piloto.pdf", width:0, height:0, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_sf8kk=/?focusWidget=3458764677097259893&embedMode=view_only_without_ui&embedId=634142589547", miroOpen:"https://miro.com/app/board/uXjVHBssTB8=/"},
+      interesse: {title:"Clientes com Interesse", desc:"Fluxograma para atendimentos de clientes que demonstraram interesse em contratar.", image:"", pdf:"assets/ilha-clientes-com-interesse.pdf", width:0, height:0, fitZoom:0.34, visibleZoom:0.62, miro:"https://miro.com/app/live-embed/uXjVH_tQgeE=/?focusWidget=3458764677097348357&embedMode=view_only_without_ui&embedId=729699388624", miroOpen:"https://miro.com/app/board/uXjVHBssTB8=/"}
+    };
+  </script>
+  <script src="script.js"></script>
+</body></html>
